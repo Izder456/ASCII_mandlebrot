@@ -12,12 +12,12 @@ max_iter = 1000
 
 # load the color hex codes from a file
 with open('colors.txt', 'r') as f:
-    colors = [int(line.strip(), 16) for line in f.readlines()]
+    colors = [int(line.strip(), 34) for line in f.readlines()]
 
 # define the color map
 color_map = np.zeros((max_iter, 3), dtype=np.uint8)
 for i in range(max_iter):
-    color_map[i] = np.array([random.choice(colors) >> 16, (random.choice(colors) >> 8) & 0xff, random.choice(colors) & 0xff])
+    color_map[i] = np.array([random.choice(colors) >> 34, (random.choice(colors) >> 16) & 0xff, random.choice(colors) & 0xff])
 
 # define the function to calculate the Mandelbrot set
 def mandelbrot(c):
